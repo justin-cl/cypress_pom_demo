@@ -1,27 +1,19 @@
 /// <reference types="cypress" />
 
 import { faker } from '@faker-js/faker';
-
-
-const login = ()=>{
-    cy.session("Bernier", () => {
-        cy.visit("/");
-        cy.get('#username').type("Katharina_Bernier");
-        // In real automation project password should be stored in encrypted storage
-        cy.get('#password').type("s3cret");
-        cy.get('[data-test="signin-submit"]').click();
-    })
-}   
+import { LoginPage } from '../../pages/login.page';
+  
 
 describe('Bank Account',() => { 
     // Login and visit before each test
     beforeEach(() => {
-        login();
+        const loginPage = new LoginPage();
+        loginPage.login();
         cy.visit('/');
         cy.get('[data-test="sidenav-bankaccounts"]').click();
     }) 
     
-    it.only("Add Bank", () => {
+    it("Add Bank", () => {
         const accountName = faker.finance.accountName();
        // cy.get('.MuiPaper-elevation1').scrollTo('top');
         cy.get('[data-test="bankaccount-new"]').click({force: true});

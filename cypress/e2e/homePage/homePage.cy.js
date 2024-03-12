@@ -1,20 +1,23 @@
 /// <reference types="cypress" />
 
+import { LoginPage } from "../../pages/login.page";
 
-const login = ()=>{
-    cy.session("Bernier", () => {
-        cy.visit("/");
-        cy.get('#username').type("Katharina_Bernier");
-        // In real automation project password should be stored in encrypted storage
-        cy.get('#password').type("s3cret");
-        cy.get('[data-test="signin-submit"]').click();
-    })
-}   
+
+// const login = ()=>{
+//     cy.session("Bernier", () => {
+//         cy.visit("/");
+//         cy.get('#username').type("Katharina_Bernier");
+//         // In real automation project password should be stored in encrypted storage
+//         cy.get('#password').type("s3cret");
+//         cy.get('[data-test="signin-submit"]').click();
+//     })
+// }   
 
 describe('Home Page tests',() => { 
     // Login and visit before each test
     beforeEach(() => {
-        login();
+        const loginPage = new LoginPage();
+        loginPage.login();
         cy.visit('/');
     }) 
     
