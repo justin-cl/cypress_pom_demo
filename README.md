@@ -1,13 +1,13 @@
 # cypress_pom_demo
 ## Demo of using Cypress with Page Object Models for automation
 
-### !!! Page objects not fully implemented yet, only LoginPage page object has been implemented.
+!!! Page objects not fully implemented yet, only LoginPage page object has been implemented.
 
 The Cypress tests in this repo automate several workflows of the Cypress Real World App.  To run these tests download and run locally the Cypress Real World App.  You can then run the tests in this repo.
 
 
 ## Setup
-# Clone the Cypress Real World App located: https://github.com/cypress-io/cypress-realworld-app
+Clone the Cypress Real World App located: https://github.com/cypress-io/cypress-realworld-app
 
 Follow the instructions in the Cypress Real World App repo to setup and run app locally.
 
