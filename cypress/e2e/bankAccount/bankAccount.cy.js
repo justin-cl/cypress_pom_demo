@@ -1,13 +1,12 @@
 /// <reference types="cypress" />
 
 import { faker } from '@faker-js/faker';
-import { LoginPage } from '../../pages/login.page';
+import { loginPage } from "../../pages/login.page"; 
   
 
 describe('Bank Account',() => { 
     // Login and visit before each test
     beforeEach(() => {
-        const loginPage = new LoginPage();
         loginPage.login();
         cy.visit('/');
         cy.get('[data-test="sidenav-bankaccounts"]').click();

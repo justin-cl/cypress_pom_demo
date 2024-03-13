@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import { LoginPage } from "../../pages/login.page";
+import { loginPage } from "../../pages/login.page";
 
 
 // const login = ()=>{
@@ -16,7 +16,7 @@ import { LoginPage } from "../../pages/login.page";
 describe('Home Page tests',() => { 
     // Login and visit before each test
     beforeEach(() => {
-        const loginPage = new LoginPage();
+        //const loginPage = new LoginPage();
         loginPage.login();
         cy.visit('/');
     }) 

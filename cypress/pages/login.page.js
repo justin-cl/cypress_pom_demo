@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 
-export class LoginPage {
+
+class LoginPage {
     inputUserName() {return cy.get('#username');}
     inputPassword() {return cy.get('#password');}
     buttonSignIn() {return cy.get('[data-test="signin-submit"]');}
@@ -13,6 +14,8 @@ export class LoginPage {
             // Todo: Put username and password in a fixture
             this.inputPassword().type("s3cret");
             this.buttonSignIn().click();
-        })
+        });
     }
 }
+
+export const loginPage =  new LoginPage();
